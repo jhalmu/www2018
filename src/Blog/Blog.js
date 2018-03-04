@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import {Container} from 'semantic-ui-react';
+//Formatting WP-post to look right
 import renderHTML from 'react-render-html';
+//For WP-date 
+import moment from 'moment';
+//Locale here
+import 'moment/locale/fi';
 
 class Blog extends Component {
    constructor(props) {
@@ -28,10 +33,11 @@ class Blog extends Component {
             let title = blogposts.title;
             let modified = blogposts.modified;
             let writer = blogposts.author.nice_name;
+            let localdate = moment(modified).format('LLL');
             
             return (
                 <div key={index}>
-                {modified}
+                {localdate}
                 <h2>{title}</h2>
                 {renderHTML(content)}   
                 <h4>{writer}</h4>
