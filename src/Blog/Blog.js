@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Divider, Grid, List} from 'semantic-ui-react';
+import {Container, Header, Divider} from 'semantic-ui-react';
 //Formatting WP-post to look right
 import renderHTML from 'react-render-html';
 //For WP-date 
@@ -36,13 +36,13 @@ class Blog extends Component {
             let localdate = moment(modified).format('LLL');
             
             return (
-                <div key={index}>
-                {localdate}
-                <h2>{title}</h2>
-                {renderHTML(content)}   
-                <h4>{writer}</h4>
-                <br />
-                </div>
+                <Container text textAlign='justified' key={index}>
+        
+                <Header as='h2'>{title}</Header>
+                {renderHTML(content)}
+                <Header.Subheader>Kirjoitti <i>{writer}</i>, {localdate}</Header.Subheader>   
+                <Divider />
+                </Container>
             )
         })
         return (
@@ -50,22 +50,7 @@ class Blog extends Component {
       
             <h1>Blog</h1>
             <Divider />
-            <Grid stackable style={{ margin: '5em 2em 2em', padding: '2em 5em 0em 3em' }}>
-                <Grid.Row>
-                     <Grid.Column width={10}>
-                        {blogposts}
-                    </Grid.Column>
-                    <Grid.Column width={4}>
-                        <List link style={{ padding: '2em 2em 0em' }}>
-                            <List.Item as='a'>Link One</List.Item>
-                            <List.Item as='a'>Link Two</List.Item>
-                            <List.Item as='a'>Link Three</List.Item>
-                            <List.Item as='a'>Link Four</List.Item>
-                        </List>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
-       
+            {blogposts}
             </div>
         );
     }
