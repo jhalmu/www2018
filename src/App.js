@@ -10,7 +10,7 @@ import {
 import { Menu } from 'semantic-ui-react'
 
 // alternative scss->css file.
-import './assets/css/default.css'
+//import './assets/css/default.css'
 
 // Footer
 import Footer from './Footer/Footer';
@@ -50,11 +50,11 @@ class App extends Component {
          
       <Router history={history}>
        
-      <div className="ui  container" inverted vertical >
+      <div className="ui container" inverted vertical >
 
             <Menu inverted pointing borderless raised> 
               <Menu.Item as= { Link } name='Home' to='/' onClick={this.handleItemClick}><img src='../images/logo.png' alt='react-logo' title='Home' /></Menu.Item>
-              <Menu.Item as= { Link } name='Etusivu' to='/' active={activeItem === 'Home'} onClick={this.handleItemClick} />
+              <Menu.Item as= { Link } name='Etusivu' to='/' active={activeItem === 'Home'} onClick={this.handleItemClick} className='nav'/>
               <Menu.Item as= { Link } name='Minä' to='About' active={activeItem === 'About'} onClick={this.handleItemClick} />
               <Menu.Item as= { Link } name='Blogi' to='Blog' active={activeItem === 'Blog'} onClick={this.handleItemClick} />
               <Menu.Item as= { Link } name='Yhteys' to='Contact' active={activeItem === 'Contact'} position='right' onClick={this.handleItemClick} />
@@ -71,9 +71,6 @@ class App extends Component {
       <Footer />
       </div>
       </Router>
-
-  
-      
     )
   }
 }
