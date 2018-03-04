@@ -7,10 +7,13 @@ import {
 } from 'react-router-dom';
 
 //includes
-import { Menu, Container } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 
 // alternative scss->css file.
 import './assets/css/default.css'
+
+// Footer
+import Footer from './Footer/Footer';
 
 // 404
 import NotFound from './NotFound/NotFound';
@@ -46,10 +49,10 @@ class App extends Component {
     return (
          
       <Router history={history}>
-       <Container> 
-      <div className="ui left aligned container">
+       
+      <div className="ui  container" inverted vertical >
 
-            <Menu inverted pointing borderless>
+            <Menu inverted pointing borderless raised> 
               <Menu.Item as= { Link } name='Home' to='/' onClick={this.handleItemClick}><img src='../images/logo.png' alt='react-logo' title='Home' /></Menu.Item>
               <Menu.Item as= { Link } name='Home' to='/' active={activeItem === 'Home'} onClick={this.handleItemClick} />
               <Menu.Item as= { Link } name='About' to='About' active={activeItem === 'About'} onClick={this.handleItemClick} />
@@ -64,10 +67,14 @@ class App extends Component {
               <Route path='/Blog' component={Blog} />
               <Route path='*' component={NotFound} />
             </Switch>
+      
+      <Footer />
       </div>
-      </Container>
       </Router>
-    );
+
+  
+      
+    )
   }
 }
 
