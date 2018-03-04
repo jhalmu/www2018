@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Divider, Segment, Grid, List} from 'semantic-ui-react';
+import {Divider, Grid, List} from 'semantic-ui-react';
 //Formatting WP-post to look right
 import renderHTML from 'react-render-html';
 //For WP-date 
@@ -47,10 +47,10 @@ class Blog extends Component {
         })
         return (
             <div>
-            <Segment aligned>
+      
             <h1>Blog</h1>
             <Divider />
-            <Grid divided stackable style={{ margin: '5em 2em 2em', padding: '2em 5em 0em 3em' }}>
+            <Grid stackable style={{ margin: '5em 2em 2em', padding: '2em 5em 0em 3em' }}>
                 <Grid.Row>
                      <Grid.Column width={10}>
                         {blogposts}
@@ -65,7 +65,7 @@ class Blog extends Component {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
-            </Segment>
+       
             </div>
         );
     }

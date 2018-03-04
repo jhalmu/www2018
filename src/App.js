@@ -54,10 +54,10 @@ class App extends Component {
 
             <Menu inverted pointing borderless raised> 
               <Menu.Item as= { Link } name='Home' to='/' onClick={this.handleItemClick}><img src='../images/logo.png' alt='react-logo' title='Home' /></Menu.Item>
-              <Menu.Item as= { Link } name='Home' to='/' active={activeItem === 'Home'} onClick={this.handleItemClick} />
-              <Menu.Item as= { Link } name='About' to='About' active={activeItem === 'About'} onClick={this.handleItemClick} />
-              <Menu.Item as= { Link } name='Blog' to='Blog' active={activeItem === 'Blog'} onClick={this.handleItemClick} />
-              <Menu.Item as= { Link } name='Contact' to='Contact' active={activeItem === 'Contact'} position='right' onClick={this.handleItemClick} />
+              <Menu.Item as= { Link } name='Etusivu' to='/' active={activeItem === 'Home'} onClick={this.handleItemClick} />
+              <Menu.Item as= { Link } name='Minä' to='About' active={activeItem === 'About'} onClick={this.handleItemClick} />
+              <Menu.Item as= { Link } name='Blogi' to='Blog' active={activeItem === 'Blog'} onClick={this.handleItemClick} />
+              <Menu.Item as= { Link } name='Yhteys' to='Contact' active={activeItem === 'Contact'} position='right' onClick={this.handleItemClick} />
             </Menu>
 
             <Switch>
